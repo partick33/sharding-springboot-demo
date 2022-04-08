@@ -1,4 +1,15 @@
-# 工程简介
-
-# 延伸阅读
-
+# SpringBoot整合Sharding5.1版本+mybtais-plus
+>## 目的：
+>### 学习练手使用，体验分库分表的大致流程
+>## 参考文档：
+>### 官方的文档https://shardingsphere.apache.org/document/5.1.0/cn/user-manual/
+>### 官方github的例子https://github.com/apache/shardingsphere/tree/master/examples，官方使用的是properties属性文件，我采用的是yml属性文件
+>## application-database-table.yml配置文件实现的是分库分表
+>>### 分片算法使用的是标准分片算法，根据列进行运算取模分片；
+>>### 详细具体可以查看官方文档：https://shardingsphere.apache.org/document/5.1.0/cn/user-manual/shardingsphere-jdbc/builtin-algorithm/sharding/
+>## application-write-read.yml配置文件实现的是读写分离+分表
+>## 谈谈在途中遇到的坑
+>>### 主要是数据源配置中5.1版本的使用的连接池的属性由原来的dataSourceClassName变成type，一定要注意不同版本间读取配置属性的改变，很容易踩坑
+>>### 官方文档中依然是使用dataSourceClassName,详情可以看https://shardingsphere.apache.org/document/5.1.0/cn/user-manual/shardingsphere-jdbc/yaml-config/
+>## 最后
+>### 希望发现有问题的地方，希望各位大佬能指出问题，小弟不胜感谢
