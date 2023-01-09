@@ -27,6 +27,12 @@ public class UserController {
         return "创建成功";
     }
 
+    @PostMapping("/createBatch")
+    public Object createBatch() {
+        userService.createBatch();
+        return "批量插入成功";
+    }
+
     @GetMapping("/searchByUserId")
     public Object searchByUserId() {
         User user = userService.searchByUserId(11L);
